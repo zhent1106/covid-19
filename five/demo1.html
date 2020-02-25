@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //使用[]调取对象属性
+      var a = 'age'
+      var myObj = {
+        name: 'Tohnny',
+        age: '28',
+        eat: function() {
+          return "I'm eating"
+        }
+      }
+      console.log(myObj['name'])
+      console.log(myObj[a])
+      console.log(myObj['eat']())
+    </script>
+  </body>
+</html>

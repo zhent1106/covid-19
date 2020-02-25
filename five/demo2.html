@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //对象构造器
+      function peroson(firstname, lastname, age, eyecolor) {
+        this.firstname = firstname
+        this.lastname = lastname
+        this.age = age
+        this.eyecolor = eyecolor
+      }
+      var myFather = new peroson('John', 'Deo', 50, 'blue')
+      var myMather = new peroson('Sally', 'Rally', 50, 'black')
+      document.write(myFather.age + '<br>')
+      document.write(myMather.firstname)
+    </script>
+  </body>
+</html>
