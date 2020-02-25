@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*调用多个参数的函数时，应该和定义他们相同的顺序提供参数*/
+      function sayHello(name, age) {
+        console.log(name + '年龄是：' + age + '岁')
+      }
+      sayHello('make', 20)
+      sayHello('Tohnny', 21)
+
+      /*JavaScript函数不检查收到的参数的数量*/
+      function sayHello(name, age) {
+        console.log(name + '年龄是：' + age + '岁')
+      }
+      sayHello('name')
+    </script>
+  </body>
+</html>
