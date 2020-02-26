@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>动画</title>
+    <style>
+      #container {
+        width: 600px;
+        height: 400px;
+        background: rgb(170, 199, 170);
+        position: relative;
+      }
+      #box {
+        width: 60px;
+        height: 60px;
+        background: rgb(211, 144, 144);
+        position: absolute;
+      }
+      #box2 {
+        width: 60px;
+        height: 60px;
+        background: rgb(211, 14, 144);
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div id="box"></div>
+      <div id="box2"></div>
+    </div>
+    <script>
+      var pos = 0
+      var pos1 = 0
+      var box = document.getElementById('box')
+      var box2 = document.getElementById('box2')
+      var t = setInterval(move, 10)
+      var b = setInterval(move1, 10)
+      function move() {
+        if (pos >= 540) {
+          clearInterval(t)
+        } else {
+          pos += 1
+          box.style.left = pos + 'px'
+        }
+      }
+      function move1() {
+        if (pos1 >= 340) {
+          clearInterval(b)
+        } else {
+          pos1 += 1
+          box2.style.top = pos1 + 'px'
+        }
+      }
+    </script>
+  </body>
+</html>
