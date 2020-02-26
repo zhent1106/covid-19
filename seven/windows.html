@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div @click="myFunction()">点击</div>
+    <script>
+      //弹框
+      var mydemo = window.open('', '', 'width=200,height=100')
+      mydemo.document.write('<h1>this is my demo</h1>')
+      setTimeout(function() {
+        mydemo.alert('Hi,this is the demo!')
+      }, 5000)
+      //打开一个新的窗口。三秒之后自动关闭
+      var mywindow = window.open('', '', 'width=200,height=100')
+      mywindow.document.write('<p>这是一个新的窗口</p>')
+      setTimeout(function() {
+        mywindow.close()
+      }, 3000)
+      //使用clearTimeOut来组织函数的执行
+      var myVar
+      function myFunction() {
+        myVar = setTimeout(function() {
+          alert('hello')
+        }, 10000)
+      }
+      function myStopFuntion() {
+        clearTimeout(myVar)
+      }
+    </script>
+  </body>
+</html>
