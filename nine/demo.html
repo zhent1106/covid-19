@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="dosomething()">
+    <!-- 时间 -->
+    <p id="demo">点击<span id="date">当前时间</span></p>
+    <p id="tip">这边显示提示</p>
+    <h2 id="tip">这边显示提示</h2>
+    <!-- //点击事件 -->
+    <button onclick="show()">点击我试一下</button>
+    <hr />
+    <p onclick="clickfn()">点我看看</p>
+    <br />
+    <!-- //onchange事件 -->
+    <input type="text" id="name" onfocus="focusfn()" onblur="blurfn()" value="获取焦点" onchange="change()" />
+    <br></br>
+    <div onmouseover="moverfn()" onmouseout="moutfn()" style="">鼠标移进来看看</div>
+    <script>
+        window.onload=function(){
+           alert("整个页面已经加载完成")
+        };
+        //点击事件
+        function show(){
+            alert("你好，我是测试者")
+        };
+        //给元素绑定事件监听
+        var x=document.getElementById('demo')
+        x.onclick=function(){
+            document.getElementById('date').innerHTML=new Date();
+        };
+        //onchange事件
+        function change(){
+            var x=document.getElementById('name')
+            x.value=x.value.toUpperCase();//转成大写
+            document.write(x)
+        }
+    </script>
+  </body>
+</html>
