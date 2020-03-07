@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="demo">我是田震</div>
+    <div id="demo1">
+      <p id="p1">这是一个例子段落</p>
+      <p id="p2">这是第二个例子段落</p>
+    </div>
+    <script>
+      //创建一个新的段落
+      var p = document.createElement('p')
+      var node = document.createTextNode('我是软件1841的田震')
+      //添加文本到段落
+      p.appendChild(node)
+      var div = document.getElementById('demo')
+      //将段落添加到div中
+      div.appendChild(p)
+      //删除HTML元素   方法1
+      var parent = document.getElementById('demo1')
+      var child = document.getElementById('p1')
+      parent.removeChild(child)
+      //   //删除元素  方法2
+      //   var child = document.getElementById('p1')
+      //   child.parentNode.removeChild(child)
+      /*替换HTML元素*/
+      var p1 = document.getElementById('p2')
+      var node1 = document.createTextNode('这是我修改之后的段落')
+      p1.appendChild(node1)
+      var parent1 = document.getElementById('demo1')
+      var child1 = document.getElementById('p2')
+      parent1.replaceChild(p1.child1)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,145 @@
+$write: rgb(255, 255, 255);
+$lightgray: rgb(209, 213, 218);
+$lightblack: #37474f;
+$black: rgb(0, 0, 0);
+$deblue: rgb(35, 91, 128);
+$blue: rgb(3, 102, 214);
+$count1: 4;
+$count2: 11;
+
+.banner {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.banner1 {
+  width: 100%;
+  position: absolute;
+  top: 120px;
+  left: 0;
+}
+
+body {
+  background-color: $write;
+  color: $lightblack;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+#container {
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
+  top: 330px;
+  border: 1px solid $lightgray;
+  border-radius: 3px;
+
+  .banner2 {
+    width: 100%;
+  }
+}
+
+//加载条
+#myBar {
+  position: absolute;
+  margin: 10% auto;
+  height: 50px;
+  text-align: center;
+  background-color: $deblue;
+  color: $black;
+}
+
+// 最外层的边框
+.queue {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 24%;
+}
+
+.item {
+  position: relative;
+  width: 97%;
+  height: 100px;
+  cursor: pointer;
+  border-bottom: 1px solid $lightgray;
+  padding-left: 30px;
+
+  img {
+    position: absolute;
+    left: 60px;
+    top: 25px;
+    width: 5%;
+    height: 45%;
+    border-radius: 3px;
+  }
+
+  h3 {
+    position: absolute;
+    left: 130px;
+    top: 5px;
+    color: $blue;
+  }
+
+  .name {
+    position: absolute;
+    left: 130px;
+    top: 35px;
+  }
+
+  .icon {
+    position: absolute;
+    left: 415px;
+    top: 22px;
+    fill: #e36209;
+  }
+
+  .rightt {
+    position: absolute;
+    left: 430px;
+    top: 5px;
+  }
+
+  .url {
+    position: absolute;
+    left: 430px;
+    top: 22px;
+    color: $blue;
+  }
+
+  .book {
+    position: absolute;
+    left: 415px;
+    top: 50px;
+    fill: #586069;
+  }
+
+  .rightb {
+    position: absolute;
+    left: 415px;
+    top: 60px;
+  }
+
+  .btn {
+    width: 65px;
+    height: 30px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    border: 1px solid $lightgray;
+    border-radius: 3px;
+    background-color: rgb(241, 244, 247);
+  }
+}
+
+@keyframes clipRectIn {
+  0% {
+    clip-path: inset(50% round 10% 50%);
+  }
+
+  100% {
+    clip-path: inset(0% round 0);
+  }
+}

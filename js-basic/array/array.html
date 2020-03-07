@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>数组常用练习</h2>
+    </div>
+    <script>
+      //初始数组
+      const arr = [1, 2, 3, 4, 5]
+      //逆转数组
+      const reverseArr = arr.reverse()
+      console.log(reverseArr)
+      //filter过滤数组
+      let filterArr = arr.filter(v => v > 2)
+      console.log(filterArr)
+      //map计算
+      const mapArr = arr.map(v => v * 2)
+      console.log(mapArr)
+      //先计算后过滤
+      const multArr = arr.map(v => v * 2).filter(v => v > 6)
+      console.log(multArr)
+      //reduce累加，最后的参数0可以省略
+      const accmulation = arr.reduce((t, v) => t + v, 0)
+      console.log(accmulation)
+      //redece累乘，最后的参数1可以省略
+      const multiplication = arr.reduce((t, v) => t * v, 1)
+      console.log(multiplication)
+      //reduce方法求最大值
+      const max = arr.reduce((t, v) => (t > v ? t : v))
+      console.log(max)
+      //reduce方法求最小值
+      const min = arr.reduce((t, v) => (t < v ? t : v))
+      console.log(min)
+      //reduce方法过滤
+      const filterByReduce = arr.reduce((t, v) => (v > 3 ? [...t, v] : t), [])
+      console.log(filterByReduce)
+    </script>
+  </body>
+</html>

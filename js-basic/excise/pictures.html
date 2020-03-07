@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>图库</title>
+    <style>
+      .container {
+        width: 80%;
+        margin: 0 auto;
+      }
+      .full-img {
+        position: relative;
+        display: block;
+        width: 300px;
+        height: 400px;
+      }
+      .full-img img {
+        width: 100%;
+        height: 100%;
+      }
+      .thumb-bar {
+        display: flex;
+        flex-wrap: nowrap;
+        margin-top: 10px;
+        width: 500px;
+        height: 100px;
+        overflow-y: hidden;
+        overflow-x: scroll;
+      }
+      .thumb-bar img {
+        width: 15%;
+        height: 100%;
+        margin: 0 5px;
+        cursor: pointer;
+      }
+      /*遮罩*/
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 400px;
+        background-color: rgba(0, 0, 0, 0);
+      }
+      button {
+        position: absolute;
+        border: none;
+        outline: none;
+        background: #402b9b;
+        cursor: pointer;
+        top: 2px;
+        left: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>图库</h1>
+      <div class="full-img">
+        <img
+          src="../images/1.jpg"
+          alt=""
+          class="
+        displayed-img"
+        />
+        <div class="overlay"></div>
+        <button class="dark">变暗</button>
+      </div>
+      <div class="thumb-bar"></div>
+    </div>
+    <script>
+      const displayedImage = document.querySelector('.displayed-img')
+      const thumbBar = document.querySelector('.thumb-bar')
+      const btn = document.querySelector('button')
+      const overlay = document.querySelector('.overlay')
+      //遍历图片并添加志缩略图
+      for (let i = 1; i <= 10; i++) {
+        const newImage = document.createElement('img')
+        newImage.setAttribute('src', '../images/' + i + '.jpg')
+        thumbBar.appendChild(newImage)
+        //点击每张缩略图取得其src属性的值
+        newImage.onclick = e => {
+          const imgSrc = e.target.getAttribute('src')
+          displayedImage.setAttribute('src', imgSrc)
+        }
+      }
+      //变亮变暗
+      btn.onclick = () => {
+        //获得按钮的class的值
+        const btnClass = btn.getAttribute('class')
+        //根据class的值切换样式和按钮文字，以尽隐藏层的背景效果
+        if (btnClass === 'dark') {
+          btn.setAttribute('class', 'light')
+          btn.textContent = '变亮'
+          overlay.style.backgroundColor = 'rgba(0,0,0,0.5)'
+        } else {
+          btn.setAttribute('class', 'dark')
+          btn.textContent = '变暗'
+          overlay.style.backgroundColor = 'rgba(0,0,0,0)'
+        }
+      }
+    </script>
+  </body>
+</html>

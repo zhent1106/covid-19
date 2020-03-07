@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img id="my-img" src="2.jpg" alt="" />
+    <a href="http://www.baidu.com">
+    <script>
+      //更改图像的src属性
+      var el = document.getElementById('my-img')
+      el.src = '1.png'
+      //更改链接的href的属性
+      var e2=document.getElementsByTagName('a');
+      e2[0].href='http://www.google.cn'
+      e2[0].innerHTML='google'
+    </script>
+  </body>
+</html>

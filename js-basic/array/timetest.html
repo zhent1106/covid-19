@@ -1,0 +1,80 @@
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+</head>
+<style>
+  #main {
+    width: 500px;
+    height: 250px;
+    margin: 20px auto;
+    border: 1px solid #000000;
+  }
+
+  #the_button {
+    width: 200px;
+    margin: 10px auto;
+  }
+
+  label {
+    display: inline-block;
+    /* float: left; */
+    margin-right: 10px;
+    width: 150px;
+    text-align: right;
+  }
+</style>
+
+<body>
+  <div id="main">
+    <label>当前的时间是:</label>
+    <input type="text" id="text_1" readonly /><br />
+    <div id="the_button">
+      <input type="button" id="time_button" value="暂停" onclick="controlTime()" />
+    </div>
+  </div>
+</body>
+<script>
+  /*
+   * 获取时间
+   */
+  var myClock = setInterval('nowTime()', 1000)
+  function nowTime() {
+    var date = new Date()
+    var year = date.getFullYear()
+    var month = date.getMonth() + 1
+    var day = date.getDate()
+    var hour = date.getHours()
+    var min = date.getMinutes()
+    var s = date.getSeconds()
+    month = check(month)
+    day = check(day)
+    hour = check(hour)
+    min = check(min)
+    s = check(s)
+    var timeStr = year + '-' + month + '-' + day + ' ' + hour + ':' + min + ':' + s
+    document.getElementById('text_1').value = timeStr
+  }
+  /*
+   *添加0
+   */
+  function check(i) {
+    if (i < 10) {
+      i = '0' + i
+    }
+    return i
+  }
+  /*
+   *一个按钮实现开始和暂停功能
+   */
+  function controlTime() {
+    var btnValue = document.getElementById('time_button').value
+    if (btnValue == '暂停') {
+      window.clearInterval(myClock)
+      document.getElementById('time_button').value = '开始'
+    }
+    if (btnValue == '开始') {
+      window.setInterval('nowTime()', 1)
+      document.getElementById('time_button').value = '暂停'
+    }
+  }
+</script>

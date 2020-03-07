@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // String对象
+      var str = 'Hello,Manta'
+      var a = str.toLocaleLowerCase() //把字符串转为小写
+      var b = str.toLocaleUpperCase() //把字符串转为大写
+      var c = '      Hello world   '.trim() //去掉两边的空白
+      document.write(a + '<br>' + b + '<br>' + c)
+      var str1 = 'Hello world,welcome to the w3cschool'
+      var n = str1.indexOf('welcome')
+      var m = str1.indexOf('loen')
+      document.write('<br>' + str1)
+      var str2 = 'Mr Blue has a blue house and a blue car and a blue hat'
+      var p = str2.replace('blue', 'red')
+      var q = str2.replace(/blue/g, 'red')
+      document.write('<br>' + str2 + '<br>' + q + '<br>' + p)
+      var str3 = 'Hello world'
+      document.write(str3.substring3 + '<br>')
+      document.write(str3.substring(2, 7))
+    </script>
+  </body>
+</html>

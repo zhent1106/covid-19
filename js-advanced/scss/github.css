@@ -1,0 +1,175 @@
+body {
+  background-color: rgb(26, 38, 50);
+  color: #37474f;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+#container {
+  width: 58%;
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid rgb(48, 66, 81);
+  border-radius: 3px;
+  margin-top: -5px;
+  background-color: white;
+}
+
+#container .banner2 {
+  width: 100%;
+}
+
+#myBar {
+  position: absolute;
+  margin: 10% auto;
+  height: 50px;
+  text-align: center;
+  background-color: #235b80;
+  color: black;
+}
+
+.queue {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 24%;
+  flex: 1 1 24%;
+}
+
+.item {
+  position: relative;
+  width: 97%;
+  height: 100px;
+  cursor: pointer;
+  border-bottom: 1px solid #d1d5da;
+  padding-left: 30px;
+}
+
+.item img {
+  position: absolute;
+  left: 60px;
+  top: 25px;
+  width: 5%;
+  height: 45%;
+  border-radius: 3px;
+}
+
+.item h3 {
+  position: absolute;
+  left: 130px;
+  top: 5px;
+  color: #0366d6;
+}
+
+.item .name {
+  position: absolute;
+  left: 130px;
+  top: 35px;
+}
+.name:hover {
+  text-decoration: underline;
+}
+.tname:hover {
+  text-decoration: underline;
+}
+.id {
+  margin-top: 28px;
+  font-size: 13px;
+}
+.imgDiv {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.imgDiv img {
+  width: 50px;
+  height: 50px;
+  background-color: gray;
+}
+
+.item .icon {
+  position: absolute;
+  left: 415px;
+  top: 18px;
+  fill: #e36209;
+}
+
+.item .rightt {
+  position: absolute;
+  left: 430px;
+  top: 5px;
+  font-size: 13px;
+}
+
+.item .rightt:hover {
+  text-decoration: underline;
+}
+
+.item .url {
+  position: absolute;
+  left: 430px;
+  top: 25px;
+  font-size: 12.5px;
+  color: #0366d6;
+}
+.url:hover {
+  text-decoration: underline;
+}
+
+.item .book {
+  position: absolute;
+  left: 415px;
+  top: 43.5px;
+  fill: #586069;
+}
+
+.item .rightb {
+  position: absolute;
+  left: 415px;
+  top: 60px;
+  width: 200px;
+  font-size: 10px;
+}
+.rightb:hover {
+  text-decoration: underline;
+}
+.item .btn {
+  width: 65px;
+  height: 30px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border: 1px solid #d1d5da;
+  border-radius: 3px;
+  color: white;
+  background-color: rgb(26, 38, 50);
+}
+
+@-webkit-keyframes clipRectIn {
+  0% {
+    -webkit-clip-path: inset(50% round 10% 50%);
+    clip-path: inset(50% round 10% 50%);
+  }
+  100% {
+    -webkit-clip-path: inset(0% round 0);
+    clip-path: inset(0% round 0);
+  }
+}
+
+@keyframes clipRectIn {
+  0% {
+    -webkit-clip-path: inset(50% round 10% 50%);
+    clip-path: inset(50% round 10% 50%);
+  }
+  100% {
+    -webkit-clip-path: inset(0% round 0);
+    clip-path: inset(0% round 0);
+  }
+}
+/*# sourceMappingURL=github.css.map */

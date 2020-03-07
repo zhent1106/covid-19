@@ -1,0 +1,135 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>鼠标悬停下拉</title>
+    <style type="text/css">
+      #main {
+        margin: 0 auto; /* 居中显示 */
+        text-align: center;
+        width: 700px;
+        height: 50px;
+        margin-top: 20px;
+        background-color: #ffc1e0;
+      }
+      /* 设置红色的3个框：首页 关于我们 我们的服务 */
+      #nav {
+        float: left;
+        line-height: 24px;
+        list-style-type: none; /* UL无样式 */
+        background: #666;
+        width: 90%; /* 总长度 */
+        height: 40px;
+        margin-left: 10px; /* 距离左边 */
+        margin-right: 10px;
+        margin-top: 5px;
+      }
+      /* 三个li的样式设置 block及宽高 */
+      #nav a {
+        display: block;
+        width: 200px;
+        height: 40px;
+        padding-top: 5px;
+        text-align: center;
+      }
+      #nav a:link {
+        color: #666;
+        text-decoration: none; /* 无下划线 */
+      }
+      #nav a:visited {
+        color: #666;
+        text-decoration: none;
+      }
+      #nav a:hover {
+        /* 鼠标无下划线加粗 */
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      #nav li {
+        float: left; /* 增加水平显示 */
+        width: 200px; /* 设置宽度 */
+        background: #ccc;
+        height: 40px;
+        margin-left: 1px;
+      }
+      #nav li a:hover {
+        /* 鼠标悬停li颜色变换 */
+        background: #0f0;
+        height: 35px;
+      }
+      #nav li ul {
+        line-height: 27px;
+        list-style-type: none;
+        text-align: left;
+        left: -999em;
+        width: 200px;
+        position: absolute;
+      }
+      #nav li ul li {
+        float: left;
+        width: 200px;
+        background: #f6f6f6; /* 下拉菜单颜色 */
+      }
+      #nav li ul a {
+        display: block;
+        width: 180px;
+        text-align: left;
+        padding-left: 24px;
+      }
+      #nav li ul a:link {
+        color: #666;
+        text-decoration: none;
+      }
+      #nav li ul a:visited {
+        color: #666;
+        text-decoration: none;
+      }
+      #nav li ul a:hover {
+        color: #f3f3f3;
+        text-decoration: none;
+        font-weight: normal;
+        width: 156px;
+        background: #c00;
+      }
+      #nav li:hover ul {
+        left: auto;
+      }
+      #nav li.sfhover ul {
+        left: auto;
+      }
+      #content {
+        clear: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <ul id="nav">
+        <li>
+          <a href="#">首页</a>
+          <ul>
+            <li><a href="http://www.baidu.com">Personal</a></li>
+            <li><a href="#">Group</a></li>
+            <li><a href="#">Administrator</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">关于我们</a>
+          <ul>
+            <li><a href="#">我们的故事</a></li>
+            <li><a href="#">我们的团队</a></li>
+            <li><a href="#">我们的青春</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">我们的服务</a>
+          <ul>
+            <li><a href="#">网页设计</a></li>
+            <li><a href="#">页面制作</a></li>
+            <li><a href="#">程序开发</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

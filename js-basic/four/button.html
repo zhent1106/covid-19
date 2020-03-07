@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="handleClick(this)">按钮1</button>
+    <button onclick="handleClick(this)">按钮2</button>
+    <button onclick="handleClick(this)">按钮3</button>
+    <button onclick="handleClick(this)">按钮4</button>
+    <button onclick="handleClick(this)">按钮5</button>
+    <script>
+      //   function handleClick(obj) {
+      //     //   console.log(obj)
+      //     // //   alert(obj)
+      //     // var btn = document.getElementsByTagName('button')
+      //     // for (var i = 0; i < btn.length; i++) {
+      //     //   btn[i].onclick = function() {
+      //     //     alert(this.innerHTML)
+      //     //   }
+      //     // }
+      //   }
+      function handleClick(id) {
+        alert(id.innerHTML)
+      }
+    </script>
+  </body>
+</html>

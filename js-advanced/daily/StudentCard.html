@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo" class="demo"></div>
+    <script>
+      var student = [
+        {
+          name: '陶永新',
+          nickName: 'Tao.',
+          address: '江苏扬州',
+          birthDay: '2000.01.01',
+          constellation: '摩羯',
+          phone: '17826012341',
+          qq: '1427177855',
+          email: 'tyxu1427177855@126.com',
+          avatar: 'https://avatars0.githubusercontent.com/u/55398415?s=460&v=4',
+          github: 'https://github.com/taoyongxin',
+          habbits: '篮球、追剧',
+          sign: 'Kepp Calm and Carry On（保持冷静，继续前行）',
+          color: '#bdbebd'
+        },
+        {
+          name: '赵玉杰',
+          nickName: 'Libra',
+          address: '江苏南京',
+          birthDay: '2000.02.28',
+          constellation: '天秤',
+          phone: '18852017973',
+          qq: '1836686674',
+          email: '1836686674@qq.com',
+          avatar: 'https://avatars0.githubusercontent.com/u/55378225?s=460&v=4',
+          github: 'https://github.com/LibraZYJ',
+          habbits: '吃饭、睡觉、打豆豆',
+          sign: '我就站在你面前，你看我几分像从前！',
+          color: '#757575'
+        },
+        {
+          name: '袁腾飞',
+          nickName: 'Rapids',
+          address: ' 安徽阜阳',
+          birthDay: ' 1998.07.30',
+          constellation: ' 狮子座',
+          phone: '18851856989',
+          qq: '798763046',
+          email: ' 798763046@qq.com',
+          avatar: 'https://avatars0.githubusercontent.com/u/44634313?s=460&v=4',
+          github: 'https://github.com/RRapids',
+          habbits: '打球',
+          sign: '若青春只顾疯狂，卑微就越来越近',
+          color: '#D8E3F3'
+        },
+        {
+          name: '田震',
+          nickName: 'Crihero_',
+          address: '山西吕梁',
+          birthDay: '1998.11.06',
+          constellation: '天蝎座',
+          phone: '19850099292',
+          qq: '1299088269',
+          email: 'zhent1106@163.com',
+          avatar: 'https://uploader.shimo.im/f/IZuPjlOpBRUTU7oZ.jpg!avatar',
+          github: 'https://github.com/zhent1106',
+          habbits: '听歌，阅读，创新',
+          sign: '山川湖泊和我都在看你',
+          color: '#4574C1'
+        },
+        {
+          name: '位哲武',
+          nickName: '隨颩洏萣',
+          address: '江苏徐州',
+          birthDay: '2000.06.06',
+          constellation: '双子座',
+          phone: '13013947768',
+          qq: '2316860587',
+          email: '2316860587@qq.com',
+          avatar: 'https://avatars2.githubusercontent.com/u/43782207?s=460&v=4',
+          github: 'https://github.com/weizhewu',
+          habbits: '轻音乐、阅读',
+          sign: '永远不要跟傻瓜吵架，因为别人会分不清到底谁是傻瓜',
+          color: '#67CCAA'
+        },
+        {
+          name: '丁怡凡',
+          nickName: '唯一',
+          address: '山西运城',
+          birthDay: '2000.10.09',
+          constellation: '天蝎座',
+          phone: '18851862081',
+          qq: '510040515',
+          email: '510040515@qq.com',
+          avatar: 'http://m.imeitou.com/uploads/allimg/2020022416/xcjlklpqncw-lp.jpeg',
+          github: 'https://github.com/dyf-yifan',
+          habbits: '阅读、音乐、电影',
+          sign: '甩掉忧伤找回快乐@',
+          color: '#FFE4C4'
+        }
+      ]
+      var parent = document.getElementById('demo')
+      for (var i = 0; i < student.length; i++) {
+        var children = document.createElement('div')
+        children.style.display = 'none'
+        children.id = 'div' + i
+
+        var first = document.createElement('img')
+        first.style = 'width:200px;height:200px'
+        first.src = student[i].avatar
+        children.appendChild(first)
+
+        var second = document.createElement('div')
+        second.style.display = 'display'
+        var secondLeft = document.createElement('input')
+        secondLeft.value = '姓名'
+        var secondRight = document.createElement('input')
+        secondRight.id = 'name' + i
+        second.appendChild(secondLeft)
+        second.appendChild(secondRight)
+        children.appendChild(second)
+        parent.appendChild(children)
+      }
+      setInterval(up, 2000)
+      var i = 0
+      function up() {
+        if (i > student.length) {
+          i = 0
+        }
+        document.body.style.backgroundColor = student[i].color
+        document.getElementById('name' + i).value = student[i].name
+        change(i++)
+      }
+      function change(i) {
+        for (let j = 0; j < student.length; j++) {
+          document.getElementById('div' + j).style.display = 'none'
+        }
+        document.getElementById('div' + i).style.display = 'block'
+        document.getElementById('name').value = student[i].name
+      }
+    </script>
+    <style type="text/css">
+      .demo {
+      }
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    </style>
+  </body>
+</html>

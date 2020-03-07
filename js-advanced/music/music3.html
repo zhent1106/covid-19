@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css"  ></style>
+		 <link rel="stylesheet" />
+	</head>
+	<body>
+		<div class='audioBox' style='float:right;padding:5px;background:#E9E9E9;'>
+			<p style="text-align:right;">
+				<a href="javascript:;" class="a1">播放</a>  <a href="javascript:;" class="a2">暂停</a>  <a href="javascript:;" class="a3">重听一次</a>
+			</p>
+		    <audio controls="true" id="audio" src="https://m7.music.126.net/20200306001316/17cb00e244627f024a0ef6c2ef501cf1/ymusic/0759/030f/540b/039ace5c004ebd382de4ca163145cf9b.mp3">
+		    	<!-- 兼容各个浏览器都可识别歌曲文件：可以使用source标签插入不同后缀，但属同一首歌曲的文件；audio标签暂不支持文件列表播放 -->
+		  <!--  	<source src="http://storage.live.com/items/1F27EE2C897D560D!107?a.mp3" type="audio/mpeg" /> -->
+		    </audio>
+		    </div>
+			<script>
+				var index,_this,time,h,m,s,hms;
+				var tips="<span class='tips' style='color:#f00;font-size:0.7em;font-weight:bold;padding-left:5px;display:none;'>播放中...</span>";
+				var audioName=["大眠","海阔天空","苏打绿 - 再遇见"];
+				var audioUrl=["https://m7.music.126.net/20200306001316/17cb00e244627f024a0ef6c2ef501cf1/ymusic/0759/030f/540b/039ace5c004ebd382de4ca163145cf9b.mp3","http://mp3.wooeu.com/mp3.php/15257322/mp3wooeu.mp3","http://fdfs.xmcdn.com/group3/M00/3F/64/wKgDslJJhJiDr4JAACG0hCSFjS8536.mp3"];
+				var audioHtml="<h4>音乐列表，点击歌名试听：</h4>\n<ul id='audioList'>";
+				$.each(audioUrl, function(i, val) {
+					audioHtml+="<li><a href='javascript:;'>"+audioName[i]+"</a></li>";
+				});
+				audioHtml+="</ul>";
+				audioHtml+="";
+				$(audioHtml).prependTo('.audioBox');
+				$("#audioList li:eq(0)").append(tips);
+				$("#audio").attr("src",audioUrl[0]);
+				$("#audio")[0].volume=0.8;
+				$("#audioList li  a").each(function(index, el) {
+					$(this).click(function(event) {
+						_this=$(this);
+						index=$("#audioList li  a").index(this);
+						$("#audio").attr("src",audioUrl[index]);
+						$(".tips").html("正在加载...").appendTo(_this.parent()).fadeIn();
+						//判断歌曲已加载完，已可播放用canplaythrough方法，只支持原生js写法
+						$("#audio")[0].addEventListener("canplaythrough",
+							function() {
+								//获取当前播放歌曲时长
+								time=new Date($("#audio")[0].duration).getTime();
+								h=parseInt(time/3600);
+								h=h==0?"":h+":"; //当歌曲不超过1小时时，不显示小时
+								m=parseInt((time-h*3600)/60);
+								s=parseInt(time-h*3600-m*60);
+								hms="["+h+m+":"+s+"]";
+								$(".tips").html("播放中"+hms+"...");
+							}, false);
+						$("#audio")[0].play();
+					});
+				});
+				$(".a1").click(function(event) {
+					$("#audio")[0].play();
+				});
+				$(".a2").click(function(event) {
+					$("#audio")[0].pause();
+				});
+				$(".a3").click(function(event) {
+					$("#audio")[0].load();
+					$("#audio")[0].play();
+				});
+			</script>
+
+	</body>
+</html>
