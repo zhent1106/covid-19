@@ -39,6 +39,62 @@
       //reduce方法过滤
       const filterByReduce = arr.reduce((t, v) => (v > 3 ? [...t, v] : t), [])
       console.log(filterByReduce)
+      //数组成员分组，按地区分
+      const arr3 = [
+        { area: 'SZ', name: 'YZG', age: 22 },
+        { area: 'SX', name: 'HY', age: 21 },
+        { area: 'NG', name: 'ZL', age: 18 },
+        { area: 'SZ', name: 'XMQ', age: 28 },
+        { area: 'GX', name: 'TZ', age: 30 }
+      ]
+      function group(arr = [], key) {
+        return key ? arr.reduce((t, v) => (!t[v[key]] && (t[v[key]] = []), t[v[key]].push(v), t), {}) : {}
+      }
+      const groupResult = group(arr3, 'area')
+      console.log(JSON.stringify(groupResult))
+      document.write(JSON.stringify(groupResult))
+      //按关键字统计
+      function countByKeyword(arr = [], keys = []) {
+        return keys.reduce((t, v) => (arr.some(w => w.includes(v)) && t.push(v), t), [])
+      }
+      const text = [
+        '我们都有优点，所以彼此欣赏一点',
+        '十年后，您把现在的奔驰宝马给孩子，他们会说太旧了！',
+        '没有绝对的傻瓜，只有愿为你装傻的人。',
+        '心幸福，日子才轻松；人自在，一生才值得！'
+      ]
+      const keyword = ['偷懒', '喜欢', '现在', '轻松', '优点', '绝对']
+      const countResult = countByKeyword(text, keyword)
+      console.log(countResult)
+      document.write(countResult)
+      //URL参数序列化
+      function stringifyUrlSearch(search = {}) {
+        return Object.entries(search)
+          .reduce((t, v) => `${t}${v[0]}=${encodeURIComponent(v[1])}&`, Object.keys(search).length ? '?' : '')
+          .reduce(/&$/, '')
+      }
+      const stringfyResult = stringfyUrlSearch({ age: 27, name: 'Tom' })
+      document.write(stringfyResult)
+      // //数组扁平（递归思想）
+      // function filterArr(arr = []) {
+      //   return arr.reduce((t, v) => t.concat(Array.isArray(v) ? flatArray(v) : v), [])
+      // }
+      // const arr4 = [0, 1, [2, 3], [4, (5)[(6, 7)], [8, [9, 10, [11, 12]]]]]
+      // const flatArr = flatArr(arr4)
+      // document.write(flatArr)
+      //URL参数反序列化
+      function parseUrlSearch() {
+        return location.search
+          .replace(/(^\?|(&$)/g, '')
+          .split('&')
+          .reduce((t, v) => {
+            const [key, val] = v.split('=')
+            t[key] = decodeURIComponent(val)
+            return t
+          }, {})
+      }
+      const parseResult = parseUrlSearch()
+      console.log(parseResult)
     </script>
   </body>
 </html>
